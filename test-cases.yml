@@ -119,8 +119,8 @@
   prerequisites:
     Открыта форма регистрации https://codebattle.hexlet.io/
   test-data: |
-    логин:Nastyфффдд
-    email:
+    логин:Nastya
+    email:nastya@mail.ru
     пароль:привет
   steps:
     - вводим логин
@@ -139,22 +139,24 @@
   prerequisites:
     Открыта форма авторизации https://codebattle.hexlet.io/
   test-data: |
-    нет
+    Email: nastya@mail.ru
+    Пароль: password
   steps:
-    - вводи email
+    - вводиv email
     - вводим пароль
     - нажимаем кнопку submit
   expected-result: |
      Форма отправилась, пользоваиель попадает в свой профиль
 
 - summary: |
-    Проверка формы авторизации при вводе не верных значений
+    Проверка формы авторизации при вводе не зарегистрированного пользователя
   requirement: |
     При вводе данных в форму авторизации не зарегистрированного пользователя, выдает ошибку что пользователь не зарегистрирован
   prerequisites:
     Открыта форма авторизации https://codebattle.hexlet.io/session/new?locale=en&next=%2F
   test-data: |
-    нет
+    Email: nastya1@mail.ru
+    Пароль: password
   steps:
     - вводи email
     - вводим пароль
@@ -164,19 +166,35 @@
 
 
 - summary: |
-    Проверка формы авторизации при вводе не верных значений
+    Проверка формы авторизации при вводе не верного пароля
   requirement: |
-    При вводе данных в форму авторизации не зарегистрированного пользователя, выдает ошибку что пользователь не зарегистрирован
+    При вводе данных в форму авторизации не верного пароля выдает ошибку
   prerequisites:
     Открыта форма авторизации https://codebattle.hexlet.io/session/new?locale=en&next=%2F
   test-data: |
-    нет
+    Email: nastya@mail.ru
+    Пароль: password1
   steps:
     - вводи email
     - вводим пароль
     - нажимаем кнопку submit
   expected-result: |
-     Форма не отправилась, выдает ошибку
+     Форма не отправилась, выдает ошибку не верный пароль
+
+- summary: |
+    Функция возобновления пароля
+  requirement: |
+    Пользовател может поменять паролль если забыл
+  prerequisites:
+    Открыта форма авторизации https://codebattle.hexlet.io/session/new?locale=en&next=%2F
+  test-data: |
+    нет
+  steps:
+    - НАжимаем на кнопку Forgot your password?
+    - в открывшейся форме вводим email
+    - нажимаем кнопку submit
+  expected-result: |
+     Отправляется письмо на почту указанную для смены пароля
 
 - summary: |
     Кнопка создание игры(create game)
