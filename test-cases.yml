@@ -39,13 +39,15 @@
    Открывается страница с формой регистрации, в форме присутствуют поля Логин,    email, пароль подтверждение пароля, кнопка
 
 - summary: |
-    Регистрация на сайте 
+    Регистрация на сайте при вводе корректных данных
   requirement: |
     При вводе корректных данных происходит регистрация на сайте
   prerequisites:
     Открыта форма регистрации сайта https://codebattle.hexlet.io/
   test-data: |
-    empty
+    Логин: Nastya
+    Email: nastya@mail.ru
+    Пароль: password
   steps:
     - вводим Nikename
     - вводим email
@@ -62,7 +64,9 @@
   prerequisites:
     Открыта форма регистрации на сайте  https://codebattle.hexlet.io/
   test-data: |
-    empty
+    Логин: Nastya
+    Email: nastya@mail.ru
+    Пароль: password
   steps:
     - вводим логин
     - вводи email
@@ -77,9 +81,11 @@
   requirement: |
     Если пользователь не заполняет одно из полей формы, форма не отправляется, появляется сообщении о обязательном заполнении поля
   prerequisites:
-    Открыта форма регистрации https://codebattle.hexlet.io/
+    Открыта форма регистрации https://codebattle.hexlet.io/ не заполнено поле логин
   test-data: |
-    empty
+    Логин: Nastya
+    Email: nastya@mail.ru
+    Пароль: password
   steps:
     - вводи email
     - вводим пароль
@@ -113,7 +119,7 @@
   prerequisites:
     Открыта форма регистрации https://codebattle.hexlet.io/
   test-data: |
-    логин:NastyaGO
+    логин:Nastyфффдд
     email:
     пароль:привет
   steps:
