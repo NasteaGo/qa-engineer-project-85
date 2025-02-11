@@ -105,4 +105,8 @@
 
 - summary: |
    Функция присоединения игрока к турниру
-  status: pass 
+  status: pass
+
+- summary: |
+   Проверка функции игры без регистрации
+  status: pass
